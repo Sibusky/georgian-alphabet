@@ -13,4 +13,3 @@ https://sibusky.github.io/georgian-alphabet/index.html
 ### Ссылка на GitHub Pages
 
 https://sibusky.github.io/georgian-alphabet/index.html
-

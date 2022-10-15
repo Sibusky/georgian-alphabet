@@ -62,11 +62,21 @@
               <input class="alphabet__character-checkbox-input" type="checkbox" id="დ" name="დ">
               <label class="alphabet__character-checkbox-label" for="დ">დ = д</label>
             </div>
+            <div class="alphabet__character-checkbox">
+              <input class="alphabet__character-checkbox-input" type="checkbox" id="ე" name="ე">
+              <label class="alphabet__character-checkbox-label" for="ე">ე = е, э</label>
+            </div>
           </fieldset>
         </section>
 
         <section class="transliteration">
-
+          <form class="transliteration__form">
+            <label class="transliteration__caption" for="transliteration__text">Напишите или скопируйте текст
+              сюда</label>
+            <textarea class="transliteration__text" id="text" name="text" placeholder="Ваш текст"></textarea>
+            <button class="transliteration__button-transliteration" type="button" aria-label="Транслитерация">Транслитерация</button>
+            <button class="transliteration__button-reset" type="button" aria-label="Очистить">Очистить</button>
+          </form>
         </section>
 
         <section class="feedback">
