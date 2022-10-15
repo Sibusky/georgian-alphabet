@@ -47,23 +47,23 @@
           <fieldset class="alphabet__characters">
             <legend class="alphabet__legend">Выберите буквы для тренировки:</legend>
             <div class="alphabet__character-checkbox">
-              <input class="alphabet__character-checkbox-input" type="checkbox" id="ა" name="ა" checked>
+              <input class="alphabet__character-checkbox-input" type="checkbox" id="ა" name="ა" value="а" checked>
               <label class="alphabet__character-checkbox-label" for="ა">ა = а</label>
             </div>
             <div class="alphabet__character-checkbox">
-              <input class="alphabet__character-checkbox-input" type="checkbox" id="ბ" name="ბ">
+              <input class="alphabet__character-checkbox-input" type="checkbox" id="ბ" value="б" name="ბ" checked>
               <label class="alphabet__character-checkbox-label" for="ბ">ბ = б</label>
             </div>
             <div class="alphabet__character-checkbox">
-              <input class="alphabet__character-checkbox-input" type="checkbox" id="გ" name="გ">
+              <input class="alphabet__character-checkbox-input" type="checkbox" id="გ" value="г" name="გ">
               <label class="alphabet__character-checkbox-label" for="გ">გ = г</label>
             </div>
             <div class="alphabet__character-checkbox">
-              <input class="alphabet__character-checkbox-input" type="checkbox" id="დ" name="დ">
+              <input class="alphabet__character-checkbox-input" type="checkbox" id="დ" value="д" name="დ">
               <label class="alphabet__character-checkbox-label" for="დ">დ = д</label>
             </div>
             <div class="alphabet__character-checkbox">
-              <input class="alphabet__character-checkbox-input" type="checkbox" id="ე" name="ე">
+              <input class="alphabet__character-checkbox-input" type="checkbox" id="ე" value="e" name="ე">
               <label class="alphabet__character-checkbox-label" for="ე">ე = е, э</label>
             </div>
           </fieldset>
@@ -73,9 +73,13 @@
           <form class="transliteration__form">
             <label class="transliteration__caption" for="transliteration__text">Напишите или скопируйте текст
               сюда</label>
-            <textarea class="transliteration__text" id="text" name="text" placeholder="Ваш текст"></textarea>
-            <button class="transliteration__button-transliteration" type="button" aria-label="Транслитерация">Транслитерация</button>
+            <textarea class="transliteration__text"
+              placeholder="Ваш текст"></textarea>
+            <button class="transliteration__button-transliteration" type="button"
+              aria-label="Транслитерация">Транслитерация</button>
             <button class="transliteration__button-reset" type="button" aria-label="Очистить">Очистить</button>
+            <textarea class="transliteration__transliterated-text"
+              placeholder="Транслитерация появится здесь"></textarea>
           </form>
         </section>
 

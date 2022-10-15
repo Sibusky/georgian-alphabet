@@ -1,7 +1,21 @@
-const georgianAlphabet = [];
-const russianAlphabet = [];
+const checkboxInputs = document.querySelectorAll('.alphabet__character-checkbox-input');
+const text = document.querySelector('.transliteration__text');
+const textDone = document.querySelector('.transliteration__transliterated-text');
+const buttonTransliteration = document.querySelector('.transliteration__button-transliteration');
+const buttonReset = document.querySelector('.transliteration__button-reset');
 
-const letterEquivalent = {
+// checkboxInputs.forEach((item) => {
+//     if (item.checked) {
+//         console.log(item.value)
+//     }
+// });
+
+function resetText() {
+    text.value = "";
+    textDone.value = "";
+};
+
+const characterEquivalent = {
     "ა": "а",
     "ბ": "б",
     "გ": "г",
@@ -37,14 +51,6 @@ const letterEquivalent = {
     "ჰ": "хʼ",
 };
 
-const russianText = `Это текст, в котором нужно будет заменять русские буквы на грузинский эквивалент. Здесь есть запятые, точки, заглавные буквы`;
-const georgianCharacters = {
-    "ა": "а",
-    "ბ": "б",
-    "გ": "г",
-    "დ": "д",
-};
-
 // Функция для замены ключей и значений местами
 function swap(obj) {
     const res = {};
@@ -55,25 +61,61 @@ function swap(obj) {
     return res;
 }
 
+
 // Функция поиска и замены
 function findAndReplace(inputText, characterObj) {
     let outputText = "";
 
     String.prototype.replaceAt = function (index, character) {
         return this.substring(0, index) + character + this.substring(index + character.length);
-    }
+    };
 
-    Object.values(characterObj).forEach((item, index) => {
+    characterObj.forEach((item) => {
         for (let i = 0; i <= inputText.length; i++) {
-            if (inputText[i] === item) {
-                inputText = inputText.toLowerCase().replaceAt(i, Object.keys(characterObj)[index])
-            }
-        }
-    })
-    return outputText = inputText;
+            if (inputText[i] === item.value && item.checked) {
+                inputText = inputText.replaceAt(i, item.name)
+            };
+        };
+    });
+    outputText = inputText;
+    return outputText;
 }
 
-findAndReplace(russianText, letterEquivalent);
 
-console.log(russianText)
-console.log(findAndReplace(russianText, letterEquivalent));
+
+
+
+
+
+// // Функция поиска и замены
+// function findAndReplace(inputText, characterObj) {
+//     let outputText = "";
+
+//     String.prototype.replaceAt = function (index, character) {
+//         return this.substring(0, index) + character + this.substring(index + character.length);
+//     }
+
+//     Object.values(characterObj).forEach((item, index) => {
+//         for (let i = 0; i <= inputText.length; i++) {
+//             if (inputText[i] === item) {
+//                 inputText = inputText.toLowerCase().replaceAt(i, Object.keys(characterObj)[index])
+//             }
+//         }
+//     })
+//     outputText = inputText;
+//     return outputText;
+// }
+
+// const transliteratedText = findAndReplace(text.textContent, checkboxInputs);
+
+// console.log(transliteratedText)
+
+// function replaceText () {
+//     textDone.value = transliteratedText;
+// }
+
+buttonReset.addEventListener('click', resetText);
+buttonTransliteration.addEventListener('click', () => {
+    const transliteratedText = findAndReplace(text.value, checkboxInputs);
+    textDone.value = transliteratedText;
+});
