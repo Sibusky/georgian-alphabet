@@ -45,15 +45,17 @@ const georgianCharacters = {
     "დ": "д",
 };
 
+// Функция для замены ключей и значений местами
 function swap(obj) {
     const res = {};
-    Object.keys(letterEquivalent).forEach(function (value) {
+    Object.keys(obj).forEach(function (value) {
         let key = obj[value];
         res[key] = value;
     });
     return res;
 }
 
+// Функция поиска и замены
 function findAndReplace(inputText, characterObj) {
     let outputText = "";
 
@@ -64,15 +66,14 @@ function findAndReplace(inputText, characterObj) {
     Object.values(characterObj).forEach((item, index) => {
         for (let i = 0; i <= inputText.length; i++) {
             if (inputText[i] === item) {
-                inputText = inputText.replaceAt(i, Object.keys(characterObj)[index])
+                inputText = inputText.toLowerCase().replaceAt(i, Object.keys(characterObj)[index])
             }
         }
     })
-
-    outputText = inputText;
-
-    console.log(russianText);
-    console.log(outputText);
+    return outputText = inputText;
 }
 
 findAndReplace(russianText, letterEquivalent);
+
+console.log(russianText)
+console.log(findAndReplace(russianText, letterEquivalent));
