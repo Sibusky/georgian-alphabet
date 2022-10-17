@@ -11,17 +11,21 @@ function resetText() {
 };
 
 // Функция поиска и замены букв
-function findAndReplace(inputText, characterObj) {
+function findAndReplace(inputText, characterArr) {
     let outputText = "";
 
-    String.prototype.replaceAt = function (index, character) {
-        return this.substring(0, index) + character + this.substring(index + character.length);
+    String.prototype.replaceAt = function (indexStart, indexEnd, character) {
+        return this.substring(0, indexStart) + character + this.substring(indexEnd + character.length);
     };
 
-    characterObj.forEach((item) => {
+    characterArr.forEach((item) => {
         for (let i = 0; i < inputText.length; i++) {
-            if (inputText[i].toLowerCase() === item.value && item.checked) {
-                inputText = inputText.replaceAt(i, item.name);
+            if (inputText[i].toLowerCase() === "д" && inputText[i + 1].toLowerCase() === "з" && inputText[i].toLowerCase() + inputText[i + 1].toLowerCase() === item.value && item.checked) {
+                inputText = inputText.replaceAt(i, i + 1, item.name);
+            } else if (inputText[i].toLowerCase() === "д" && inputText[i + 1].toLowerCase() === "ж" && inputText[i].toLowerCase() + inputText[i + 1].toLowerCase() === item.value && item.checked) {
+                inputText = inputText.replaceAt(i, i + 1, item.name);
+            } else if (inputText[i].toLowerCase() === item.value && item.checked) {
+                inputText = inputText.replaceAt(i, i, item.name);
             };
         };
     });
