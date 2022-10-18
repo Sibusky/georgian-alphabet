@@ -1,13 +1,13 @@
 const checkboxInputs = document.querySelectorAll('.alphabet__character-checkbox-input');
-const text = document.querySelector('.transliteration__text');
-const textDone = document.querySelector('.transliteration__transliterated-text');
+const textBefore = document.querySelector('.transliteration__text-before');
+const textAfter = document.querySelector('.transliteration__text-after');
 const buttonTransliteration = document.querySelector('.transliteration__button-transliteration');
 const buttonReset = document.querySelector('.transliteration__button-reset');
 
 // Функция сброса текста
 function resetText() {
-    text.value = "";
-    textDone.value = "";
+    textBefore.value = "";
+    textAfter.value = "";
 };
 
 // Функция поиска и замены букв
@@ -35,6 +35,6 @@ function findAndReplace(inputText, characterArr) {
 
 buttonReset.addEventListener('click', resetText);
 buttonTransliteration.addEventListener('click', () => {
-    const transliteratedText = findAndReplace(text.value, checkboxInputs);
-    textDone.value = transliteratedText;
+    const transliteratedText = findAndReplace(textBefore.value, checkboxInputs);
+    textAfter.value = transliteratedText;
 });

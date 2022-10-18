@@ -1,0 +1,6 @@
+.footer__contacts-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0 0 20px auto;
+}

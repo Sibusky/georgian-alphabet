@@ -1,0 +1,7 @@
+.footer__social-network-link {
+    display: flex;
+    align-items: center;
+    justify-items: flex-end;
+    text-decoration: none;
+    color: black;
+}

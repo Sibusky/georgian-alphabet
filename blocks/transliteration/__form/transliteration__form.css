@@ -1,0 +1,11 @@
+.transliteration__form {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(3, auto);
+}
+
+@media screen and (max-width: 800px) {
+    .transliteration__form {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

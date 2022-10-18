@@ -174,25 +174,59 @@
 
         <section class="transliteration">
           <form class="transliteration__form">
-            <label class="transliteration__caption" for="transliteration__text">Напишите или скопируйте текст
-              в поле ниже</label>
-            <textarea class="transliteration__text" placeholder="Ваш текст"></textarea>
-            <button class="transliteration__button-transliteration" type="button"
-              aria-label="Транслитерация">Транслитерация</button>
-            <button class="transliteration__button-reset" type="button" aria-label="Очистить">Очистить</button>
-            <textarea class="transliteration__transliterated-text"
-              placeholder="Транслитерация появится здесь"></textarea>
+            <div class="transliteration__text">
+              <label class="transliteration__caption" for="transliteration__text-before">Напишите или скопируйте текст
+                сюда:</label>
+              <textarea class="transliteration__text-before transliteration__textarea" rows="20" cols="30"
+                placeholder="Ваш текст"></textarea>
+            </div>
+            <div class="transliteration__buttons">
+              <button class="transliteration__button-transliteration transliteration__button" type="button"
+                aria-label="Транслитерация">Транслитерация</button>
+              <button class="transliteration__button-reset transliteration__button" type="button"
+                aria-label="Очистить">Очистить</button>
+            </div>
+            <div class="transliteration__text">
+              <label class="transliteration__caption" for="transliteration__text-after">Текст после
+                транслитерации:</label>
+              <textarea class="transliteration__text-after transliteration__textarea" rows="20" cols="30"
+                placeholder="Транслитерация появится здесь"></textarea>
+            </div>
           </form>
         </section>
 
         <section class="feedback">
-
+          <p class="feedback__text">Заметили ошибку или есть идея как улучшить тренажёр, напишите сообщение мне в
+            соцсети, указанные в правом нижнем углу страницы.</p>
         </section>
       </main>
 
       <footer class="footer">
-      </footer>
+        <p class="footer__copyright">&copy; 2022 Алексей Смирнов</p>
+        <div class="footer__contacts">
+          <h4 class="footer__contacts-text">Связаться со мной:</h4>
+          <nav>
+            <ul class="footer__contacts-list">
+              <li class="footer__contacts-list-item link">
+                <a class="footer__social-network-link" href="https://t.me/+79005527229" target="_blank">Телеграм<img class="footer__social-network-logo"
+                    src="./images/telegram_logo.png" class=""></a>
+              </li>
+              <li class="footer__contacts-list-item link">
+                <a class="footer__social-network-link" href="https://vk.com/sibusky" target="_blank">ВК<img class="footer__social-network-logo"
+                    src="./images/vk_logo.png" class=""></a>
+              </li>
+              <li class="footer__contacts-list-item link">
+                <a class="footer__social-network-link" href="https://www.instagram.com/electrician_smirnov/" target="_blank">Инстаграм<img class="footer__social-network-logo"
+                    src="./images/insta_logo.png" class=""></a>
+              </li>
+            </ul>
+          </nav>
+
+
+        </div>
     </div>
+    </footer>
+  </div>
   </div>
   <script src="./script.js"></script>
 </body>

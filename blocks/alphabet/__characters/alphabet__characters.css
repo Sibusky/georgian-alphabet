@@ -1,0 +1,23 @@
+.alphabet__characters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+@media screen and (max-width: 1300px) {
+    .alphabet__characters {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .alphabet__characters {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .alphabet__characters {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

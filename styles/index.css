@@ -1,22 +1,27 @@
 @import url(./normalize.css);
 @import url(../blocks/page/page.css);
 @import url(../blocks/page/__container/page__container.css);
+@import url(../blocks/link/link.css);
 @import url(../blocks/lead/lead.css);
 @import url(../blocks/lead/__title/lead__title.css);
 @import url(../blocks/lead/__text/lead__text.css);
+@import url(../blocks/alphabet/alphabet.css);
+@import url(../blocks/alphabet/__characters/alphabet__characters.css);
+@import url(../blocks/transliteration/transliteration.css);
+@import url(../blocks/transliteration/__form/transliteration__form.css);
+@import url(../blocks/transliteration/__text/transliteration__text.css);
+@import url(../blocks/transliteration/__buttons/transliteration__buttons.css);
+@import url(../blocks/transliteration/__caption/transliteration__caption.css);
+@import url(../blocks/transliteration/__button/transliteration__button.css);
+@import url(../blocks/transliteration/__textarea/transliteration__textarea.css);
+@import url(../blocks/feedback/feedback.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__contacts-list/footer__contacts-list.css);
+@import url(../blocks/footer/__social-network-logo/footer__social-network-logo.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+@import url(../blocks/footer/__contacts-text/footer__contacts-text.css);
+@import url(../blocks/footer/__social-network-link/footer__social-network-link.css);
+@import url(../blocks/footer/__contacts-list-item/footer__contacts-list-item.css);
 
 
-
-.alphabet {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 90vw;
-    margin: 0 auto 25px;
-}
-
-.alphabet__characters {
-    width: 100%;
-    
-}
 
