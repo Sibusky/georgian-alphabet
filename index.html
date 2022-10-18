@@ -16,33 +16,39 @@
 
       <main class="content">
         <section class="lead">
-          <h1 class="lead__title">Тренажёр грузинского алфавита</h1>
-          <p class="lead__text">Грузинские буквы алфавита очень необычные и сложные на первый взгляд, но есть и
+          <h1 class="lead__title text">Тренажёр грузинского алфавита</h1>
+          <p class="lead__text text">Грузинские буквы алфавита очень необычные и сложные на первый взгляд, но есть и
             положительный момент - почти все буквы читаются как русские аналоги, что делает изучение алфавита с помощью
-            замен русских букв грузинскими лёгким и продуктивным.
+            замен в тексте русских букв грузинскими лёгким и продуктивным.
           </p>
-          <p class="lead__text">Для тренировки напишите или вставьте текст в поле ниже, затем выберите буквы грузинского
+          <p class="lead__text text">Для тренировки напишите или вставьте текст в поле ниже, затем выберите буквы
+            грузинского
             алфавита, которые хотите потренировать и нажмите кнопку "Транслитерация"
           </p>
-          <p class="lead__text">Рекомендую начать с замены одной буквы, потом добавить ещё одну, потом ещё. И так далее
-            пока вы не запомните все буквы алфавита.
+          <p class="lead__text text">Рекомендую начать с замены одной буквы, потом добавить ещё одну, потом ещё, и так
+            далее
+            пока вы не запомните все буквы.
           </p>
-          <p class="lead__text">Конечно, не все буквы грузинского алфавита имеют аналоги в русском. Поэтому
+          <p class="lead__text text">Конечно, не все буквы грузинского алфавита имеют аналоги в русском. Поэтому
             транслитерация некоторых букв приблизительная и у нескольких букв она одинакова. Например, в грузинском
             языке есть три разновидности буквы "к" по твёрдости произношения. В таких случаях эти буквы нужно
-            тренировать по отдельности, потом что в тренажёре нет настройки твёрдости произношения.
+            тренировать по отдельности, потому что в тренажёре нет настройки твёрдости произношения.
           </p>
         </section>
 
         <section class="alphabet">
-          <fieldset class="alphabet__characters">
+          <fieldset class="alphabet__characters text">
             <legend class="alphabet__legend">Выберите буквы для тренировки:</legend>
+            <div class="alphabet__buttons">
+              <button class="alphabet__button-check-all button">Выбрать все</button>
+              <button class="alphabet__button-check-none button">Снять выделение</button>
+            </div>
             <div class="alphabet__character-checkbox">
-              <input class="alphabet__character-checkbox-input" type="checkbox" id="ა" name="ა" value="а" checked>
+              <input class="alphabet__character-checkbox-input" type="checkbox" id="ა" name="ა" value="а">
               <label class="alphabet__character-checkbox-label" for="ა">ა = а</label>
             </div>
             <div class="alphabet__character-checkbox">
-              <input class="alphabet__character-checkbox-input" type="checkbox" id="ბ" value="б" name="ბ" checked>
+              <input class="alphabet__character-checkbox-input" type="checkbox" id="ბ" value="б" name="ბ">
               <label class="alphabet__character-checkbox-label" for="ბ">ბ = б</label>
             </div>
             <div class="alphabet__character-checkbox">
@@ -54,7 +60,7 @@
               <label class="alphabet__character-checkbox-label" for="დ">დ = д</label>
             </div>
             <div class="alphabet__character-checkbox">
-              <input class="alphabet__character-checkbox-input" type="checkbox" id="ე" value="e" name="ე">
+              <input class="alphabet__character-checkbox-input" type="checkbox" id="ე" value="е" name="ე">
               <label class="alphabet__character-checkbox-label" for="ე">ე = е, э</label>
             </div>
             <div class="alphabet__character-checkbox">
@@ -175,49 +181,50 @@
         <section class="transliteration">
           <form class="transliteration__form">
             <div class="transliteration__text">
-              <label class="transliteration__caption" for="transliteration__text-before">Напишите или скопируйте текст
+              <label class="transliteration__caption text" for="transliteration__text-before">Напишите или скопируйте
+                текст
                 сюда:</label>
-              <textarea class="transliteration__text-before transliteration__textarea" rows="20" cols="30"
+              <textarea class="transliteration__text-before transliteration__textarea text" rows="20" cols="30"
                 placeholder="Ваш текст"></textarea>
             </div>
             <div class="transliteration__buttons">
-              <button class="transliteration__button-transliteration transliteration__button" type="button"
+              <button class="transliteration__button-transliteration transliteration__button button text" type="button"
                 aria-label="Транслитерация">Транслитерация</button>
-              <button class="transliteration__button-reset transliteration__button" type="button"
+              <button class="transliteration__button-reset transliteration__button button text" type="button"
                 aria-label="Очистить">Очистить</button>
             </div>
             <div class="transliteration__text">
-              <label class="transliteration__caption" for="transliteration__text-after">Текст после
+              <label class="transliteration__caption text" for="transliteration__text-after text">Текст после
                 транслитерации:</label>
-              <textarea class="transliteration__text-after transliteration__textarea" rows="20" cols="30"
+              <textarea class="transliteration__text-after transliteration__textarea text" rows="20" cols="30"
                 placeholder="Транслитерация появится здесь"></textarea>
             </div>
           </form>
         </section>
 
         <section class="feedback">
-          <p class="feedback__text">Заметили ошибку или есть идея как улучшить тренажёр, напишите сообщение мне в
+          <p class="feedback__text text">Заметили ошибку или есть идея как улучшить тренажёр, напишите сообщение мне в
             соцсети, указанные в правом нижнем углу страницы.</p>
         </section>
       </main>
 
       <footer class="footer">
-        <p class="footer__copyright">&copy; 2022 Алексей Смирнов</p>
+        <p class="footer__copyright text">&copy; 2022 Алексей Смирнов</p>
         <div class="footer__contacts">
-          <h4 class="footer__contacts-text">Связаться со мной:</h4>
           <nav>
             <ul class="footer__contacts-list">
               <li class="footer__contacts-list-item link">
-                <a class="footer__social-network-link" href="https://t.me/+79005527229" target="_blank">Телеграм<img class="footer__social-network-logo"
-                    src="./images/telegram_logo.png" class=""></a>
+                <a class="footer__social-network-link text" href="https://t.me/+79005527229" target="_blank"><img
+                    class="footer__social-network-logo" src="./images/telegram_logo.png" class="">Телеграм</a>
               </li>
               <li class="footer__contacts-list-item link">
-                <a class="footer__social-network-link" href="https://vk.com/sibusky" target="_blank">ВК<img class="footer__social-network-logo"
-                    src="./images/vk_logo.png" class=""></a>
+                <a class="footer__social-network-link text" href="https://vk.com/sibusky" target="_blank"><img
+                    class="footer__social-network-logo" src="./images/vk_logo.png" class="">ВК</a>
               </li>
               <li class="footer__contacts-list-item link">
-                <a class="footer__social-network-link" href="https://www.instagram.com/electrician_smirnov/" target="_blank">Инстаграм<img class="footer__social-network-logo"
-                    src="./images/insta_logo.png" class=""></a>
+                <a class="footer__social-network-link text" href="https://www.instagram.com/electrician_smirnov/"
+                  target="_blank"><img class="footer__social-network-logo" src="./images/insta_logo.png"
+                    class="">Инстаграм</a>
               </li>
             </ul>
           </nav>

@@ -1,6 +1,11 @@
 .footer__contacts-list {
     display: flex;
-    flex-direction: column;
     list-style: none;
-    margin: 0 0 20px auto;
+    margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+    .footer__contacts-list {
+        flex-direction: column;
+    }
 }

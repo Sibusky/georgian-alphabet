@@ -2,11 +2,13 @@
 @import url(../blocks/page/page.css);
 @import url(../blocks/page/__container/page__container.css);
 @import url(../blocks/link/link.css);
+@import url(../blocks/text/text.css);
 @import url(../blocks/lead/lead.css);
 @import url(../blocks/lead/__title/lead__title.css);
 @import url(../blocks/lead/__text/lead__text.css);
 @import url(../blocks/alphabet/alphabet.css);
 @import url(../blocks/alphabet/__characters/alphabet__characters.css);
+@import url(../blocks/alphabet/__character-checkbox/alphabet__character-checkbox.css);
 @import url(../blocks/transliteration/transliteration.css);
 @import url(../blocks/transliteration/__form/transliteration__form.css);
 @import url(../blocks/transliteration/__text/transliteration__text.css);
@@ -22,6 +24,3 @@
 @import url(../blocks/footer/__contacts-text/footer__contacts-text.css);
 @import url(../blocks/footer/__social-network-link/footer__social-network-link.css);
 @import url(../blocks/footer/__contacts-list-item/footer__contacts-list-item.css);
-
-
-

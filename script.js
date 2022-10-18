@@ -3,6 +3,8 @@ const textBefore = document.querySelector('.transliteration__text-before');
 const textAfter = document.querySelector('.transliteration__text-after');
 const buttonTransliteration = document.querySelector('.transliteration__button-transliteration');
 const buttonReset = document.querySelector('.transliteration__button-reset');
+const buttonCheckAll = document.querySelector('.alphabet__button-check-all');
+const buttonCheckNone = document.querySelector('.alphabet__button-check-none');
 
 // Функция сброса текста
 function resetText() {
@@ -24,6 +26,8 @@ function findAndReplace(inputText, characterArr) {
                 inputText = inputText.replaceAt(i, i + 1, item.name);
             } else if (inputText[i].toLowerCase() === "д" && inputText[i + 1].toLowerCase() === "ж" && inputText[i].toLowerCase() + inputText[i + 1].toLowerCase() === item.value && item.checked) {
                 inputText = inputText.replaceAt(i, i + 1, item.name);
+            } else if (inputText[i].toLowerCase() === "э" || inputText[i].toLowerCase() === "ё" && item.value === "е" && item.checked) {
+                inputText = inputText.replaceAt(i, i, item.name);
             } else if (inputText[i].toLowerCase() === item.value && item.checked) {
                 inputText = inputText.replaceAt(i, i, item.name);
             };
@@ -32,6 +36,15 @@ function findAndReplace(inputText, characterArr) {
     outputText = inputText;
     return outputText;
 };
+
+// Слушатели событий
+buttonCheckAll.addEventListener('click', () => {
+    checkboxInputs.forEach(item => item.checked = true)
+});
+
+buttonCheckNone.addEventListener('click', () => {
+    checkboxInputs.forEach(item => item.checked = false)
+})
 
 buttonReset.addEventListener('click', resetText);
 buttonTransliteration.addEventListener('click', () => {
