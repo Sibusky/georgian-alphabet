@@ -10,7 +10,7 @@
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 940px) {
     .alphabet__characters {
         grid-template-columns: repeat(2, 1fr);
     }

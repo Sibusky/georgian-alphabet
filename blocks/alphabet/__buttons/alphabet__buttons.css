@@ -1,0 +1,9 @@
+.alphabet__buttons {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 650px) {
+    .alphabet__buttons {
+        margin-bottom: 10px;
+    }
+}
