@@ -26,7 +26,9 @@ function findAndReplace(inputText, characterArr) {
                 inputText = inputText.replaceAt(i, i + 1, item.name);
             } else if (inputText[i].toLowerCase() === "д" && inputText[i + 1].toLowerCase() === "ж" && inputText[i].toLowerCase() + inputText[i + 1].toLowerCase() === item.value && item.checked) {
                 inputText = inputText.replaceAt(i, i + 1, item.name);
-            } else if (inputText[i].toLowerCase() === "э" || inputText[i].toLowerCase() === "ё" && item.value === "е" && item.checked) {
+            } else if (inputText[i].toLowerCase() === "э" && item.value === "е" && item.checked) {
+                inputText = inputText.replaceAt(i, i, item.name);
+            } else if (inputText[i].toLowerCase() === "ё" && item.value === "е" && item.checked) {
                 inputText = inputText.replaceAt(i, i, item.name);
             } else if (inputText[i].toLowerCase() === item.value && item.checked) {
                 inputText = inputText.replaceAt(i, i, item.name);
