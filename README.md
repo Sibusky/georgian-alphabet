@@ -10,7 +10,7 @@ Personal pet-project which helps to memorize Georgian alphabet.
 - **BEM** (file structure, naming, using mixes),
 - hover animation,
 - adaptive layout,
-- **JavaScipt** for characters transliteration.
+- **JavaScript** for characters transliteration.
 
 ### GitHub Pages link
 
@@ -28,7 +28,7 @@ https://sibusky.github.io/georgian-alphabet/index.html
 - **БЭМ** (файловая структура, правильное наименование, миксование),
 - анимация при наведении курсора,
 - адаптивная и "резиновая" вёрстка,
-- **JavaScipt** для управления транслитерацией букв.
+- **JavaScript** для управления транслитерацией букв.
 
 ### Ссылка на GitHub Pages
 
