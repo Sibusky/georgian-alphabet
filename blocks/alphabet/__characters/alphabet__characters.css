@@ -1,23 +1,23 @@
 .alphabet__characters {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-}
-
-@media screen and (max-width: 1300px) {
-    .alphabet__characters {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(12, 33px);
+    grid-auto-flow: column;
+    height: 400px;
 }
 
 @media screen and (max-width: 940px) {
     .alphabet__characters {
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(18, 33px);
+        height: 600px;
     }
 }
 
 @media screen and (max-width: 650px) {
     .alphabet__characters {
         grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(34, 33px);
+        height: 1140px;
     }
 }

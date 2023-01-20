@@ -14,7 +14,7 @@ Personal pet-project which helps to memorize Georgian alphabet.
 
 ### GitHub Pages link
 
-https://sibusky.github.io/georgian-alphabet/index.html
+https://sibusky.github.io/georgian-alphabet/
 
 # Тренажёр грузинского алфавита
 
@@ -32,4 +32,4 @@ https://sibusky.github.io/georgian-alphabet/index.html
 
 ### Ссылка на GitHub Pages
 
-https://sibusky.github.io/georgian-alphabet/index.html
+https://sibusky.github.io/georgian-alphabet/
