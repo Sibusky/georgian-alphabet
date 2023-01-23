@@ -10,6 +10,7 @@
 @import url(../blocks/alphabet/__characters/alphabet__characters.css);
 @import url(../blocks/alphabet/__character-checkbox/alphabet__character-checkbox.css);
 @import url(../blocks/alphabet/__buttons/alphabet__buttons.css);
+@import url(../blocks/alphabet/__button/alphabet__button.css);
 @import url(../blocks/transliteration/transliteration.css);
 @import url(../blocks/transliteration/__form/transliteration__form.css);
 @import url(../blocks/transliteration/__text/transliteration__text.css);

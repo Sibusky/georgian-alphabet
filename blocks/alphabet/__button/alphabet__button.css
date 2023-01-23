@@ -1,0 +1,10 @@
+.alphabet__button {
+    width: 215px;
+    height: 27px;
+}
+
+@media screen and (max-width: 650px) {
+    .alphabet__button {
+       margin: auto;
+    }
+}
