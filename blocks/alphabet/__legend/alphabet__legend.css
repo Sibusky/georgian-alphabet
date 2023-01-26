@@ -1,13 +1,13 @@
-.lead__title {
+.alphabet__legend {
   font-family: Arial, sans-serif;
   font-style: normal;
-  font-weight: 800;
-  font-size: 25px;
-  line-height: 30px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
   text-rendering: optimizeLegibility;
   text-decoration: none;
   color: #000;
   letter-spacing: 0;
+  margin: 10px;
   padding: 0;
-  margin: 30px auto 10px;
 }

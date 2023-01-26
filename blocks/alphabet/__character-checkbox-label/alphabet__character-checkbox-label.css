@@ -1,4 +1,4 @@
-.alphabet__button {
+.alphabet__character-checkbox-label {
     font-family: Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -9,13 +9,5 @@
     color: #000;
     letter-spacing: 0;
     padding: 0;
-    width: 215px;
-    height: 27px;
-    margin: 0 auto;
+    margin: 0;
 }
-
-/* @media screen and (max-width: 650px) {
-    .alphabet__button {
-       margin: auto;
-    }
-} */

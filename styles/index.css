@@ -9,8 +9,14 @@
 @import url(../blocks/alphabet/alphabet.css);
 @import url(../blocks/alphabet/__characters/alphabet__characters.css);
 @import url(../blocks/alphabet/__character-checkbox/alphabet__character-checkbox.css);
+@import url(../blocks/alphabet/__character-button/alphabet__character-button.css);
 @import url(../blocks/alphabet/__buttons/alphabet__buttons.css);
 @import url(../blocks/alphabet/__button/alphabet__button.css);
+@import url(../blocks/alphabet/__tooltip/alphabet__tooltip.css);
+@import url(../blocks/alphabet/__legend/alphabet__legend.css);
+@import url(../blocks/alphabet/__character-checkbox-label/alphabet__character-checkbox-label.css);
+@import url(../blocks/alphabet/__character-checkbox-input/alphabet__character-checkbox-input.css);
+@import url(../blocks/button/button.css);
 @import url(../blocks/transliteration/transliteration.css);
 @import url(../blocks/transliteration/__form/transliteration__form.css);
 @import url(../blocks/transliteration/__text/transliteration__text.css);
@@ -26,3 +32,8 @@
 @import url(../blocks/footer/__contacts-text/footer__contacts-text.css);
 @import url(../blocks/footer/__social-network-link/footer__social-network-link.css);
 @import url(../blocks/footer/__contacts-list-item/footer__contacts-list-item.css);
+@import url(../blocks/tooltip/tooltip.css);
+@import url(../blocks/tooltip/_opened/tooltip_opened.css);
+@import url(../blocks/tooltip/__container/tooltip__container.css);
+@import url(../blocks/tooltip/__text/tooltip__text.css);
+@import url(../blocks/tooltip/__close-btn/tooltip__close-btn.css);

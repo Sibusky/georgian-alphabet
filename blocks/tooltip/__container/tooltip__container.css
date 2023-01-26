@@ -1,0 +1,12 @@
+.tooltip__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  width: 200px;
+  position: absolute;
+  transition: transform 0.7s;
+  z-index: 1;
+  border-radius: 15px;
+}

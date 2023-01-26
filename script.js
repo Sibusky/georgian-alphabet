@@ -10,6 +10,11 @@ const buttonReset = document.querySelector('.transliteration__button-reset');
 const buttonCheckAll = document.querySelector('.alphabet__button-check-all');
 const buttonCheckNone = document.querySelector('.alphabet__button-check-none');
 
+const alphabet = document.querySelector('.alphabet__characters');
+const toolTip = document.querySelector('.tooltip');
+const toolTipText = document.querySelector('.tooltip__text');
+const toolTipCloseButton = document.querySelector('.tooltip__close-btn');
+
 // Функция сброса текста
 function resetText() {
   textBefore.value = '';
@@ -28,7 +33,8 @@ function findAndReplace(inputText, characterArr) {
     );
   };
 
-  characterArr.forEach((item) => {
+  characterArr.reverse().forEach((item) => {
+    // развернул массив в обратную сторону, чтобы обработать дз и дж
     for (let i = 0; i < inputText.length; i++) {
       if (
         inputText[i].toLowerCase() === 'д' &&
@@ -84,6 +90,7 @@ const oneK = chooseOnlyOne([
   checkboxInputs[21],
   checkboxInputs[23],
 ]);
+const oneG = chooseOnlyOne([checkboxInputs[2], checkboxInputs[22]]);
 const oneP = chooseOnlyOne([checkboxInputs[14], checkboxInputs[20]]);
 const oneT = chooseOnlyOne([checkboxInputs[7], checkboxInputs[18]]);
 const oneH = chooseOnlyOne([checkboxInputs[30], checkboxInputs[32]]);
@@ -95,16 +102,16 @@ buttonCheckAll.addEventListener('click', () => {
   checkboxInputs.forEach((item) => {
     if (
       !(
-        item === checkboxInputs[21] ||
-        item === checkboxInputs[23] ||
-        item === checkboxInputs[20] ||
         item === checkboxInputs[18] ||
-        item === checkboxInputs[32] ||
+        item === checkboxInputs[20] ||
+        item === checkboxInputs[21] ||
+        item === checkboxInputs[22] ||
+        item === checkboxInputs[23] ||
+        item === checkboxInputs[28] ||
         item === checkboxInputs[29] ||
-        item === checkboxInputs[28]
+        item === checkboxInputs[32]
       )
     ) {
-      // console.log(item);
       item.checked = true;
     }
   });
@@ -116,6 +123,35 @@ buttonCheckNone.addEventListener('click', () => {
 
 buttonReset.addEventListener('click', resetText);
 buttonTransliteration.addEventListener('click', () => {
-  const transliteratedText = findAndReplace(textBefore.value, checkboxInputs);
+  const transliteratedText = findAndReplace(textBefore.value, [
+    ...checkboxInputs,
+  ]);
   textAfter.value = transliteratedText;
+});
+
+// Используя делегирование выбираю кнопку подсказки
+alphabet.onclick = function (e) {
+  let target = e.target;
+
+  if (!target.dataset.title) {
+    return;
+  }
+
+  showTooltip(target);
+};
+
+// Открываю окно подсказки с текстом, соответствующим кнопке
+function showTooltip(button) {
+  toolTip.classList.add('tooltip_opened');
+  toolTipText.textContent = button.dataset.title;
+}
+
+toolTipCloseButton.addEventListener('click', () => {
+  toolTip.classList.remove('tooltip_opened');
+});
+
+toolTip.addEventListener('click', (e) => {
+  if (e.target === e.currentTarget) {
+    toolTip.classList.remove('tooltip_opened');
+  }
 });
