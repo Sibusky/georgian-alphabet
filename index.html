@@ -65,9 +65,11 @@
               в тексте русских букв грузинскими лёгким и продуктивным.
             </p>
             <p class="lead__text">
-              Для тренировки напишите или вставьте текст в поле ниже, затем
-              выберите буквы грузинского алфавита, которые хотите потренировать
-              и нажмите кнопку "Транслитерация"
+              Выберите буквы грузинского алфавита, которые хотите потренировать.
+              Затем напишите или вставьте текст в поле ниже. Если лень
+              выдумывать или неоткуда копировать, то воспользуйтесь кнопками
+              "Случайный текст" или "Факт о Грузии" и нажмите кнопку
+              "Транслитерация".
             </p>
             <p class="lead__text">
               Рекомендую начать с замены одной буквы, потом добавить ещё одну,
@@ -82,7 +84,7 @@
               тренажёре нет настройки твёрдости произношения.
             </p>
             <p class="lead__text">
-              Чтобы узнать какие буквы нельзя тренировать с выбранной, нажмите 
+              Чтобы узнать какие буквы нельзя тренировать с выбранной вами, нажмите
               на знак вопроса у соответствующего чекбокса.
             </p>
           </section>
@@ -602,30 +604,48 @@
                 <label
                   class="transliteration__caption text"
                   for="transliteration__text-before"
-                  >Напишите или скопируйте текст сюда:</label
+                  >Вставьте русский текст сюда:</label
                 >
                 <textarea
-                  class="transliteration__text-before transliteration__textarea text"
+                  class="transliteration__text-before transliteration__textarea"
                   rows="20"
                   cols="30"
                   placeholder="Ваш текст"
                 ></textarea>
               </div>
               <div class="transliteration__buttons">
-                <button
-                  class="transliteration__button-transliteration transliteration__button button text"
-                  type="button"
-                  aria-label="Транслитерация"
-                >
-                  Транслитерация
-                </button>
-                <button
-                  class="transliteration__button-reset transliteration__button button text"
-                  type="button"
-                  aria-label="Очистить"
-                >
-                  Очистить
-                </button>
+                <div class="transliteration__buttons-trans-and-reset">
+                  <button
+                    class="transliteration__button-transliteration transliteration__button button"
+                    type="button"
+                    aria-label="Транслитерация"
+                  >
+                    Транслитерация
+                  </button>
+                  <button
+                    class="transliteration__button-reset transliteration__button button"
+                    type="button"
+                    aria-label="Очистить"
+                  >
+                    Очистить
+                  </button>
+                </div>
+                <div class="transliteration__buttons-options">
+                  <button
+                    class="transliteration__button-random-text transliteration__button button"
+                    type="button"
+                    aria-label="Случайный текст"
+                  >
+                    Случайный текст
+                  </button>
+                  <button
+                    class="transliteration__button-georgian-fact transliteration__button button"
+                    type="button"
+                    aria-label="Случайный текст"
+                  >
+                    Факт о Грузии
+                  </button>
+                </div>
               </div>
               <div class="transliteration__text">
                 <label
@@ -634,7 +654,7 @@
                   >Текст после транслитерации:</label
                 >
                 <textarea
-                  class="transliteration__text-after transliteration__textarea text"
+                  class="transliteration__text-after transliteration__textarea"
                   rows="20"
                   cols="30"
                   placeholder="Транслитерация появится здесь"
@@ -704,6 +724,7 @@
         </div>
       </div>
     </div>
+    <script src="./georgianFacts.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

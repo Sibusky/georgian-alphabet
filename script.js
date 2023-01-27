@@ -15,6 +15,13 @@ const toolTip = document.querySelector('.tooltip');
 const toolTipText = document.querySelector('.tooltip__text');
 const toolTipCloseButton = document.querySelector('.tooltip__close-btn');
 
+const randomTextButton = document.querySelector(
+  '.transliteration__button-random-text'
+);
+const georgianFactButton = document.querySelector(
+  '.transliteration__button-georgian-fact'
+);
+
 // Функция сброса текста
 function resetText() {
   textBefore.value = '';
@@ -154,4 +161,30 @@ toolTip.addEventListener('click', (e) => {
   if (e.target === e.currentTarget) {
     toolTip.classList.remove('tooltip_opened');
   }
+});
+
+// Слушатель событий на кнопку рандомного текста
+randomTextButton.addEventListener('click', () => {
+  getRandomText()
+    .then((res) => {
+      textBefore.value = res.text;
+    })
+    .catch((err) => {
+      console.log(err);
+      textBefore.value =
+        'Упс. При загрузке текста произошла ошибка, повторите позже.';
+    });
+});
+
+// Функция получения рандомного текста с сервера
+function getRandomText() {
+  return fetch('https://fish-text.ru/get', {}).then((res) => {
+    return res.ok ? res.json() : Promise.reject(res.status);
+  });
+}
+
+// Слушатель события на кнопку вызова факта о Грузии
+georgianFactButton.addEventListener('click', () => {
+  textBefore.value =
+    georgianFacts[Math.floor(Math.random() * georgianFacts.length)];
 });

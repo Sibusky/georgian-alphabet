@@ -18,6 +18,6 @@
     .alphabet__characters {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(35, 45px);
-        height: 1610px;
+        height: 1620px;
     }
 }
