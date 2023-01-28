@@ -19,11 +19,11 @@
   margin: 0;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 650px) {
   .transliteration__button {
-    font-size: 14px;
-    line-height: 14px;
-    width: 120px;
+    font-size: 14.5px;
+    line-height: 15px;
+    width: 125px;
     height: 25px;
   }
 }
