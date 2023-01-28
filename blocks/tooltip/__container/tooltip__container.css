@@ -4,9 +4,15 @@
   align-items: center;
   justify-content: center;
   background-color: white;
-  width: 200px;
+  width: 350px;
   position: absolute;
   transition: transform 0.7s;
   z-index: 1;
   border-radius: 15px;
+}
+
+@media screen and (max-width: 650px) {
+  .tooltip__container {
+    width: 250px;
+  }
 }

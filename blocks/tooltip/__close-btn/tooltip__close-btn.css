@@ -1,15 +1,16 @@
 .tooltip__close-btn {
-  background-image: url(../../../images/tooltip-close-btn.svg);
+  background-image: url(../../../images/tooltip-close-btn.png);
   position: absolute;
   top: 4px;
   right: 4px;
   background-color: transparent;
   border: none;
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin: 0;
   padding: 0;
+  opacity: 0.8;
 }
