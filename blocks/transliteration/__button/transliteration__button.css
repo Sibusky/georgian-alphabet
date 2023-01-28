@@ -19,7 +19,7 @@
   margin: 0;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 350px) {
   .transliteration__button {
     font-size: 14.5px;
     line-height: 15px;
