@@ -2,6 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 90vw;
+    max-width: 80vw;
     margin: 0 auto 25px;
 }

@@ -1,23 +1,32 @@
 .alphabet__characters {
-    display: grid;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(9, 45px);
+  grid-auto-flow: column;
+  width: 100%;
+  height: 425px;
+}
+
+@media screen and (max-width: 1120px) {
+  .alphabet__characters {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(12, 45px);
-    grid-auto-flow: column;
     height: 565px;
+  }
 }
 
 @media screen and (max-width: 940px) {
-    .alphabet__characters {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(18, 45px);
-        height: 825px;
-    }
+  .alphabet__characters {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(18, 45px);
+    height: 825px;
+  }
 }
 
 @media screen and (max-width: 650px) {
-    .alphabet__characters {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(35, 45px);
-        height: 1620px;
-    }
+  .alphabet__characters {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(35, 45px);
+    height: 1620px;
+  }
 }
