@@ -26,6 +26,7 @@
 @import url(../blocks/transliteration/__textarea/transliteration__textarea.css);
 @import url(../blocks/transliteration/__buttons-trans-and-reset/transliteration__buttons-trans-and-reset.css);
 @import url(../blocks/transliteration/__buttons-options/transliteration__buttons-options.css);
+@import url(../blocks/transliteration/__textarea/_color/transliteration__textarea_color_red.css);
 @import url(../blocks/feedback/feedback.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__contacts-list/footer__contacts-list.css);
