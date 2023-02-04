@@ -22,6 +22,13 @@ const georgianFactButton = document.querySelector(
   '.transliteration__button-georgian-fact'
 );
 
+const buttonTextSizeUp = document.querySelector(
+  '.transliteration__button-text-size-up'
+);
+const buttonTextSizeDown = document.querySelector(
+  '.transliteration__button-text-size-down'
+);
+
 // Функция сброса текста
 function resetText() {
   textBefore.value = '';
@@ -180,23 +187,6 @@ function findAndReplace(text, nodeList) {
   return text;
 }
 
-// Слушатели событий
-buttonCheckAll.addEventListener('click', () => {
-  checkboxInputs.forEach((item) => (item.checked = true));
-});
-
-buttonCheckNone.addEventListener('click', () => {
-  checkboxInputs.forEach((item) => (item.checked = false));
-});
-
-buttonReset.addEventListener('click', resetText);
-buttonTransliteration.addEventListener('click', () => {
-  const transliteratedText = findAndReplace(textBefore.value, [
-    ...checkboxInputs,
-  ]);
-  textAfter.value = transliteratedText;
-});
-
 // Используя делегирование выбираю кнопку подсказки
 alphabet.onclick = function (e) {
   let target = e.target;
@@ -214,10 +204,63 @@ function showTooltip(button) {
   toolTipText.textContent = button.dataset.title;
 }
 
+// Функция получения рандомного текста с сервера
+function getRandomText() {
+  return fetch('https://fish-text.ru/get', {}).then((res) => {
+    return res.ok ? res.json() : Promise.reject(res.status);
+  });
+}
+
+// Увеличиваю шрифт
+function increaseTextSize(text) {
+  let currentTextSize = getComputedStyle(text).fontSize.split('px').join('');
+  let currentLineHeight = getComputedStyle(text)
+    .lineHeight.split('px')
+    .join('');
+
+  text.style.fontSize = `${+currentTextSize + 2}px`;
+  text.style.lineHeight = `${+currentLineHeight + 2}px`;
+}
+
+// Уменьшаю шрифт
+function decreaseTextSize(text) {
+  let currentTextSize = getComputedStyle(text).fontSize.split('px').join('');
+  let currentLineHeight = getComputedStyle(text)
+    .lineHeight.split('px')
+    .join('');
+
+  text.style.fontSize = `${+currentTextSize - 2}px`;
+  text.style.lineHeight = `${+currentLineHeight - 2}px`;
+}
+
+// Слушатели событий
+// Выбор всех чек боксов
+buttonCheckAll.addEventListener('click', () => {
+  checkboxInputs.forEach((item) => (item.checked = true));
+});
+
+// Снять выбор со всех чекбоксов
+buttonCheckNone.addEventListener('click', () => {
+  checkboxInputs.forEach((item) => (item.checked = false));
+});
+
+// Сброс текста
+buttonReset.addEventListener('click', resetText);
+
+// Транслитерация текста
+buttonTransliteration.addEventListener('click', () => {
+  const transliteratedText = findAndReplace(textBefore.value, [
+    ...checkboxInputs,
+  ]);
+  textAfter.value = transliteratedText;
+});
+
+// Закрытие тултипа по кнопке
 toolTipCloseButton.addEventListener('click', () => {
   toolTip.classList.remove('tooltip_opened');
 });
 
+// Закрытие тултипа по тёмной области
 toolTip.addEventListener('click', (e) => {
   if (e.target === e.currentTarget) {
     toolTip.classList.remove('tooltip_opened');
@@ -237,15 +280,18 @@ randomTextButton.addEventListener('click', () => {
     });
 });
 
-// Функция получения рандомного текста с сервера
-function getRandomText() {
-  return fetch('https://fish-text.ru/get', {}).then((res) => {
-    return res.ok ? res.json() : Promise.reject(res.status);
-  });
-}
-
 // Слушатель события на кнопку вызова факта о Грузии
 georgianFactButton.addEventListener('click', () => {
   textBefore.value =
     georgianFacts[Math.floor(Math.random() * georgianFacts.length)];
+});
+
+// Кнопка увеличения текста
+buttonTextSizeUp.addEventListener('click', () => {
+  increaseTextSize(textAfter);
+});
+
+// Кнопка уменьшения текста
+buttonTextSizeDown.addEventListener('click', () => {
+  decreaseTextSize(textAfter);
 });

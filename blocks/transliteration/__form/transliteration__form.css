@@ -1,7 +1,7 @@
 .transliteration__form {
   display: grid;
   list-style: none;
-  grid-template-columns: auto 175px auto;
+  grid-template-columns: auto 180px auto;
 }
 
 @media screen and (max-width: 800px) {

@@ -6,6 +6,7 @@
 @import url(../blocks/lead/lead.css);
 @import url(../blocks/lead/__title/lead__title.css);
 @import url(../blocks/lead/__text/lead__text.css);
+@import url(../blocks/lead/__text-link/lead__text-link.css);
 @import url(../blocks/alphabet/alphabet.css);
 @import url(../blocks/alphabet/__characters/alphabet__characters.css);
 @import url(../blocks/alphabet/__character-checkbox/alphabet__character-checkbox.css);
@@ -26,6 +27,7 @@
 @import url(../blocks/transliteration/__textarea/transliteration__textarea.css);
 @import url(../blocks/transliteration/__buttons-trans-and-reset/transliteration__buttons-trans-and-reset.css);
 @import url(../blocks/transliteration/__buttons-options/transliteration__buttons-options.css);
+@import url(../blocks/transliteration/__buttons-text-size/transliteration__buttons-text-size.css);
 @import url(../blocks/transliteration/__textarea/_color/transliteration__textarea_color_red.css);
 @import url(../blocks/feedback/feedback.css);
 @import url(../blocks/footer/footer.css);
