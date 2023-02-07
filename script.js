@@ -218,8 +218,10 @@ function increaseTextSize(text) {
     .lineHeight.split('px')
     .join('');
 
-  text.style.fontSize = `${+currentTextSize + 2}px`;
-  text.style.lineHeight = `${+currentLineHeight + 2}px`;
+  if (currentTextSize < 50) {
+    text.style.fontSize = `${+currentTextSize + 2}px`;
+    text.style.lineHeight = `${+currentLineHeight + 2}px`;
+  }
 }
 
 // Уменьшаю шрифт
@@ -229,8 +231,10 @@ function decreaseTextSize(text) {
     .lineHeight.split('px')
     .join('');
 
-  text.style.fontSize = `${+currentTextSize - 2}px`;
-  text.style.lineHeight = `${+currentLineHeight - 2}px`;
+  if (currentTextSize > 10) {
+    text.style.fontSize = `${+currentTextSize - 2}px`;
+    text.style.lineHeight = `${+currentLineHeight - 2}px`;
+  }
 }
 
 // Слушатели событий
