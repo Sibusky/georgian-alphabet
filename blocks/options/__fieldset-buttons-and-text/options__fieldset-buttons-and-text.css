@@ -1,0 +1,7 @@
+.options__fieldset-buttons-and-text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 0 20px 0;
+  padding: 0;
+}

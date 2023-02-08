@@ -18,6 +18,16 @@
 @import url(../blocks/alphabet/__legend/alphabet__legend.css);
 @import url(../blocks/alphabet/__character-checkbox-label/alphabet__character-checkbox-label.css);
 @import url(../blocks/alphabet/__character-checkbox-input/alphabet__character-checkbox-input.css);
+@import url(../blocks/options/options.css);
+@import url(../blocks/options/__fieldset-legend/options__fieldset-legend.css);
+@import url(../blocks/options/__fieldset/options__fieldset.css);
+@import url(../blocks/options/__fieldset-buttons-and-text/options__fieldset-buttons-and-text.css);
+@import url(../blocks/options/__fieldset-buttons/options__fieldset-buttons.css);
+@import url(../blocks/options/__fieldset-buttons-title/options__fieldset-buttons-title.css);
+@import url(../blocks/options/__fieldset-button/options__fieldset-button.css);
+@import url(../blocks/options/__fieldset-checkbox/options__fieldset-checkbox.css);
+@import url(../blocks/options/__fieldset-checkbox-label/options__fieldset-checkbox-label.css);
+@import url(../blocks/options/__fieldset-checkbox-button/options__fieldset-checkbox-button.css);
 @import url(../blocks/button/button.css);
 @import url(../blocks/transliteration/transliteration.css);
 @import url(../blocks/transliteration/__form/transliteration__form.css);

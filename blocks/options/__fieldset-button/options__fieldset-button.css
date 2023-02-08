@@ -1,4 +1,4 @@
-.transliteration__button {
+.options__fieldset-button {
   font-family: Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -9,43 +9,46 @@
   color: #000;
   letter-spacing: 0;
   padding: 0;
-  margin: 0 0 20px;
+  margin: 0 20px 0 0;
   width: 140px;
   height: 30px;
 }
 
-.transliteration__button:last-of-type {
+.options__fieldset-button:last-of-type {
   margin: 0;
 }
 
-@media screen and (max-width: 560px) {
-  .transliteration__button {
-    font-size: 14.5px;
+@media screen and (max-width: 830px) {
+  .options__fieldset-button {
+    font-size: 15px;
     line-height: 15px;
-    width: 125px;
+    margin: 0 10px 0 0;
+
+    width: 130px;
     height: 25px;
   }
 }
 
-@media screen and (max-width: 450px) {
-  .transliteration__button {
+@media screen and (max-width: 760px) {
+  .options__fieldset-button {
     font-size: 13px;
     line-height: 14px;
     width: 110px;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .transliteration__button {
+@media screen and (max-width: 690px) {
+  .options__fieldset-button {
     font-size: 16px;
     line-height: 16px;
     width: 140px;
     height: 30px;
+    margin: 0 0 10px 0;
   }
 }
 
 @media screen and (max-width: 340px) {
-  .transliteration__button {
+  .options__fieldset-button {
     font-size: 14.5px;
     line-height: 15px;
     width: 125px;

@@ -25,6 +25,7 @@ const oneginButton = document.querySelector('.options__fieldset-button-onegin');
 const optionsCheckboxInputs = document.querySelectorAll(
   '.options__fieldset-checkbox-input'
 );
+const options = document.querySelector('.options__fieldset')
 
 const buttonTextSizeUp = document.querySelector(
   '.transliteration__button-text-size-up'
@@ -201,8 +202,19 @@ function findAndReplace(text, nodeList) {
   return text;
 }
 
-// Используя делегирование выбираю кнопку подсказки
+// Используя делегирование выбираю кнопку подсказки в алфавите
 alphabet.onclick = function (e) {
+  let target = e.target;
+
+  if (!target.dataset.title) {
+    return;
+  }
+
+  showTooltip(target);
+};
+
+// Используя делегирование выбираю кнопку подсказки в опциях
+options.onclick = function (e) {
   let target = e.target;
 
   if (!target.dataset.title) {
