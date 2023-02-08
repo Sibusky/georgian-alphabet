@@ -16,24 +16,39 @@ const toolTipText = document.querySelector('.tooltip__text');
 const toolTipCloseButton = document.querySelector('.tooltip__close-btn');
 
 const randomTextButton = document.querySelector(
-  '.transliteration__button-random-text'
+  '.options__fieldset-button-random-text'
 );
 const georgianFactButton = document.querySelector(
-  '.transliteration__button-georgian-fact'
+  '.options__fieldset-button-georgian-fact'
+);
+const oneginButton = document.querySelector('.options__fieldset-button-onegin');
+const optionsCheckboxInputs = document.querySelectorAll(
+  '.options__fieldset-checkbox-input'
+);
+const options = document.querySelector('.options__fieldset');
+const transliteration = document.querySelector('.transliteration__form')
+
+const buttonTextAfterSizeUp = document.querySelector(
+  '.transliteration__button-text-after-size-up'
+);
+const buttonTextAfterSizeDown = document.querySelector(
+  '.transliteration__button-text-after-size-down'
+);
+const buttonTextBeforeSizeUp = document.querySelector(
+  '.transliteration__button-text-before-size-up'
+);
+const buttonTextBeforeSizeDown = document.querySelector(
+  '.transliteration__button-text-before-size-down'
 );
 
-const buttonTextSizeUp = document.querySelector(
-  '.transliteration__button-text-size-up'
-);
-const buttonTextSizeDown = document.querySelector(
-  '.transliteration__button-text-size-down'
-);
+
 
 // Функция сброса текста
 function resetText() {
   textBefore.value = '';
   textAfter.value = '';
-  textAfter.classList.remove('transliteration__textarea_color_red');
+  alphabet.classList.remove('alphabet__characters_color_red');
+  textBefore.classList.remove('transliteration__textarea_border_red');
 }
 
 // Получаю объект из чекнутых грузинских букв
@@ -56,19 +71,28 @@ function getCheckedInputs(nodeList) {
 }
 
 function findAndReplace(text, nodeList) {
+  // Чекнутые буквы
   let characters = getCheckedInputs(nodeList);
   let georgianCharacters = Object.keys(characters);
   let russianCharacters = Object.values(characters);
 
-  if (georgianCharacters.length == 0) {
-    text = 'Выберите какую-нибудь букву для транслитерации...';
-    textAfter.classList.add('transliteration__textarea_color_red');
+  // Чекнутые опции
+  let options = getCheckedInputs(optionsCheckboxInputs);
+  let optionsKeys = Object.keys(options);
+
+  // Если не выбраны буквы и не написан текст
+  if (georgianCharacters.length == 0 || !textBefore.value) {
+    showTooltip(buttonTransliteration);
+    text = '';
+    alphabet.classList.add('alphabet__characters_color_red');
+    textBefore.classList.add('transliteration__textarea_border_red');
   } else {
-    textAfter.classList.remove('transliteration__textarea_color_red');
+    alphabet.classList.remove('alphabet__characters_color_red');
+    textBefore.classList.remove('transliteration__textarea_border_red');
   }
 
   // Убираю мягкий и твёрдый знаки
-  if (georgianCharacters.length > 30) {
+  if (optionsKeys.includes('ь')) {
     let regExp = /[^ьъ]/gi;
     text = text.match(regExp) ? text.match(regExp).join('') : text;
   }
@@ -187,8 +211,19 @@ function findAndReplace(text, nodeList) {
   return text;
 }
 
-// Используя делегирование выбираю кнопку подсказки
+// Используя делегирование выбираю кнопку подсказки в алфавите
 alphabet.onclick = function (e) {
+  let target = e.target;
+
+  if (!target.dataset.title) {
+    return;
+  }
+
+  showTooltip(target);
+};
+
+// Используя делегирование выбираю кнопку подсказки в опциях
+options.onclick = function (e) {
   let target = e.target;
 
   if (!target.dataset.title) {
@@ -252,7 +287,8 @@ buttonCheckNone.addEventListener('click', () => {
 buttonReset.addEventListener('click', resetText);
 
 // Транслитерация текста
-buttonTransliteration.addEventListener('click', () => {
+buttonTransliteration.addEventListener('click', (e) => {
+  e.preventDefault();
   const transliteratedText = findAndReplace(textBefore.value, [
     ...checkboxInputs,
   ]);
@@ -290,12 +326,28 @@ georgianFactButton.addEventListener('click', () => {
     georgianFacts[Math.floor(Math.random() * georgianFacts.length)];
 });
 
-// Кнопка увеличения текста
-buttonTextSizeUp.addEventListener('click', () => {
+// Слушатель события на кнопку вызова цитаты из Онегина
+oneginButton.addEventListener('click', () => {
+  textBefore.value = onegin[Math.floor(Math.random() * onegin.length)];
+});
+
+// Кнопка увеличения текста до
+buttonTextBeforeSizeUp.addEventListener('click', () => {
+  increaseTextSize(textBefore);
+});
+
+// Кнопка уменьшения текста до
+buttonTextBeforeSizeDown.addEventListener('click', () => {
+  decreaseTextSize(textBefore);
+});
+
+// Кнопка увеличения текста после
+buttonTextAfterSizeUp.addEventListener('click', () => {
   increaseTextSize(textAfter);
 });
 
-// Кнопка уменьшения текста
-buttonTextSizeDown.addEventListener('click', () => {
+// Кнопка уменьшения текста после
+buttonTextAfterSizeDown.addEventListener('click', () => {
   decreaseTextSize(textAfter);
 });
+

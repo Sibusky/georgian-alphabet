@@ -1,0 +1,57 @@
+.options__fieldset-button {
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  text-rendering: optimizeLegibility;
+  text-decoration: none;
+  color: #000;
+  letter-spacing: 0;
+  padding: 0;
+  margin: 0 20px 0 0;
+  width: 140px;
+  height: 30px;
+}
+
+.options__fieldset-button:last-of-type {
+  margin: 0;
+}
+
+@media screen and (max-width: 830px) {
+  .options__fieldset-button {
+    font-size: 15px;
+    line-height: 15px;
+    margin: 0 10px 0 0;
+
+    width: 130px;
+    height: 25px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .options__fieldset-button {
+    font-size: 13px;
+    line-height: 14px;
+    width: 110px;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .options__fieldset-button {
+    font-size: 16px;
+    line-height: 16px;
+    width: 140px;
+    height: 30px;
+    margin: 0 0 10px 0;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .options__fieldset-button {
+    font-size: 14.5px;
+    line-height: 15px;
+    width: 125px;
+    height: 25px;
+  }
+}

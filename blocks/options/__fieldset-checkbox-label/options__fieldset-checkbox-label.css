@@ -1,4 +1,4 @@
-.transliteration__button {
+.options__fieldset-checkbox-label {
   font-family: Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -9,11 +9,5 @@
   color: #000;
   letter-spacing: 0;
   padding: 0;
-  margin: 0 0 20px;
-  width: 140px;
-  height: 30px;
-}
-
-.transliteration__button:last-of-type {
   margin: 0;
 }

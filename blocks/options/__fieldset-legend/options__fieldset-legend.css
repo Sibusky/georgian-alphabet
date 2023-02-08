@@ -1,19 +1,13 @@
-.transliteration__button {
+.options__fieldset-legend {
   font-family: Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 21px;
   text-rendering: optimizeLegibility;
   text-decoration: none;
   color: #000;
   letter-spacing: 0;
+  margin: 10px;
   padding: 0;
-  margin: 0 0 20px;
-  width: 140px;
-  height: 30px;
-}
-
-.transliteration__button:last-of-type {
-  margin: 0;
 }

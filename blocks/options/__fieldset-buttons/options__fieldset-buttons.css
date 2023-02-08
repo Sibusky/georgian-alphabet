@@ -1,0 +1,12 @@
+.options__fieldset-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+@media screen and (max-width: 690px) {
+  .options__fieldset-buttons {
+    flex-direction: column;
+  }
+}

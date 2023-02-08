@@ -67,10 +67,15 @@
             <p class="lead__text">
               Выберите буквы грузинского алфавита, которые хотите потренировать.
               Затем напишите или вставьте текст в поле ниже. Если лень
-              выдумывать или неоткуда копировать, то воспользуйтесь кнопками
-              "Случайный текст" или "Факт о Грузии" и нажмите кнопку
-              "Транслитерация". За генерацию случайных текстов спасибо сервису
-              <a class="lead__text-link link" href="https://fish-text.ru" target="_blank">fish-text</a>.
+              выдумывать или неоткуда копировать, то воспользуйтесь
+              рандомайзером текста и нажмите кнопку "Транслитерация". За
+              генерацию случайных текстов спасибо сервису
+              <a
+                class="lead__text-link link"
+                href="https://fish-text.ru"
+                target="_blank"
+                >fish-text</a
+              >.
             </p>
             <p class="lead__text">
               Рекомендую начать с замены одной буквы, потом добавить ещё одну,
@@ -599,6 +604,60 @@
             </fieldset>
           </section>
 
+          <section class="options">
+            <fieldset class="options__fieldset">
+              <legend class="options__fieldset-legend">
+                Дополнительные опции:
+              </legend>
+              <div class="options__fieldset-buttons-and-text">
+                <h4 class="options__fieldset-buttons-title">
+                  Рандомайзеры текста:
+                </h4>
+                <div class="options__fieldset-buttons">
+                  <button
+                    class="options__fieldset-button-random-text options__fieldset-button button"
+                    type="button"
+                    aria-label="Случайный текст"
+                  >
+                    Случайный текст
+                  </button>
+                  <button
+                    class="options__fieldset-button-georgian-fact options__fieldset-button button"
+                    type="button"
+                    aria-label="Факт о Грузии"
+                  >
+                    Факт о Грузии
+                  </button>
+                  <button
+                    class="options__fieldset-button-onegin options__fieldset-button button"
+                    type="button"
+                    aria-label="Евгений Онегин"
+                  >
+                    Евгений Онегин
+                  </button>
+                </div>
+              </div>
+              <div class="options__fieldset-checkbox">
+                <input
+                  class="options__fieldset-checkbox-input"
+                  type="checkbox"
+                  id="ь"
+                  value="ь"
+                  name="ь"
+                />
+                <label class="options__fieldset-checkbox-label" for="ь"
+                  >Удалять 'ъ' и 'ь'</label
+                >
+                <button
+                  class="options__fieldset-checkbox-button button"
+                  data-title="Если поставить галочку, то в итоговом тексте не будет букв 'ъ' и 'ь'"
+                >
+                  ?
+                </button>
+              </div>
+            </fieldset>
+          </section>
+
           <section class="transliteration">
             <form class="transliteration__form">
               <div class="transliteration__text">
@@ -613,13 +672,32 @@
                   cols="30"
                   placeholder="Ваш текст"
                 ></textarea>
+                <div class="transliteration__buttons-text-size">
+                  <button
+                    class="transliteration__button-text-before-size-up transliteration__button-text-size button"
+                    type="button"
+                    aria-label="Увеличить шрифт"
+                    data-title="Увеличить шрифт textBefore"
+                  >
+                    +
+                  </button>
+                  <button
+                    class="transliteration__button-text-before-size-down transliteration__button-text-size button"
+                    type="button"
+                    aria-label="Уменьшить шрифт"
+                    data-title="Уменьшить шрифт textBefore"
+                  >
+                    -
+                  </button>
+                </div>
               </div>
               <div class="transliteration__buttons">
                 <div class="transliteration__buttons-trans-and-reset">
                   <button
                     class="transliteration__button-transliteration transliteration__button button"
-                    type="button"
+                    type="submit"
                     aria-label="Транслитерация"
+                    data-title="Для начала выберите буквы для тренировки и напишите что-нибудь в поле для русского текста"
                   >
                     Транслитерация
                   </button>
@@ -629,39 +707,6 @@
                     aria-label="Очистить"
                   >
                     Очистить
-                  </button>
-                </div>
-                <div class="transliteration__buttons-options">
-                  <button
-                    class="transliteration__button-random-text transliteration__button button"
-                    type="button"
-                    aria-label="Случайный текст"
-                  >
-                    Случайный текст
-                  </button>
-                  <button
-                    class="transliteration__button-georgian-fact transliteration__button button"
-                    type="button"
-                    aria-label="Факт о Грузии"
-                  >
-                    Факт о Грузии
-                  </button>
-                  
-                </div>
-                <div class="transliteration__buttons-text-size">
-                  <button
-                    class="transliteration__button-text-size-up transliteration__button button"
-                    type="button"
-                    aria-label="Увеличить шрифт"
-                  >
-                    Шрифт +
-                  </button>
-                  <button
-                    class="transliteration__button-text-size-down transliteration__button button"
-                    type="button"
-                    aria-label="Уменьшить шрифт"
-                  >
-                    Шрифт -
                   </button>
                 </div>
               </div>
@@ -677,13 +722,31 @@
                   cols="30"
                   placeholder="Транслитерация появится здесь"
                 ></textarea>
+                <div class="transliteration__buttons-text-size">
+                  <button
+                    class="transliteration__button-text-after-size-up transliteration__button-text-size button"
+                    type="button"
+                    aria-label="Увеличить шрифт"
+                    data-title="Увеличить шрифт textAfter"
+                  >
+                    +
+                  </button>
+                  <button
+                    class="transliteration__button-text-after-size-down transliteration__button-text-size button"
+                    type="button"
+                    aria-label="Уменьшить шрифт"
+                    data-title="Уменьшить шрифт textAfter"
+                  >
+                    -
+                  </button>
+                </div>
               </div>
             </form>
           </section>
 
           <section class="feedback">
             <p class="feedback__text text">
-              Заметили ошибку или есть идея как улучшить тренажёр, напишите
+              Заметили ошибку или есть идея как улучшить тренажёр? Напишите
               сообщение мне в соцсети, указанные в правом нижнем углу страницы.
             </p>
           </section>
@@ -743,6 +806,7 @@
       </div>
     </div>
     <script src="./georgianFacts.js"></script>
+    <script src="./onegin.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-.transliteration__button {
+.transliteration__button-text-size {
   font-family: Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -9,11 +9,8 @@
   color: #000;
   letter-spacing: 0;
   padding: 0;
-  margin: 0 0 20px;
-  width: 140px;
+  margin: 0 0 10px 0;
+  width: 30px;
   height: 30px;
-}
-
-.transliteration__button:last-of-type {
-  margin: 0;
+  opacity: 0.6;
 }
