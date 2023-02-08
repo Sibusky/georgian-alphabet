@@ -33,7 +33,9 @@ const buttonTextSizeDown = document.querySelector(
 function resetText() {
   textBefore.value = '';
   textAfter.value = '';
-  textAfter.classList.remove('transliteration__textarea_color_red');
+  // textAfter.classList.remove('transliteration__textarea_color_red');
+  alphabet.classList.remove('alphabet__characters_color_red');
+  textBefore.classList.remove('transliteration__textarea_border_red');
 }
 
 // Получаю объект из чекнутых грузинских букв
@@ -60,11 +62,20 @@ function findAndReplace(text, nodeList) {
   let georgianCharacters = Object.keys(characters);
   let russianCharacters = Object.values(characters);
 
-  if (georgianCharacters.length == 0) {
-    text = 'Выберите какую-нибудь букву для транслитерации...';
-    textAfter.classList.add('transliteration__textarea_color_red');
+  // Если не выбраны буквы и не написан текст 
+  if (georgianCharacters.length == 0 || !textBefore.value) {
+    showTooltip(buttonTransliteration);
+    // text = 'Выберите какую-нибудь букву для транслитерации...';
+    text = '';
+    // textAfter.classList.add('transliteration__textarea_color_red');
+    alphabet.classList.add('alphabet__characters_color_red');
+    // textAfter.classList.add('transliteration__textarea_color_red');
+    textBefore.classList.add('transliteration__textarea_border_red');
   } else {
-    textAfter.classList.remove('transliteration__textarea_color_red');
+    // textAfter.classList.remove('transliteration__textarea_color_red');
+    alphabet.classList.remove('alphabet__characters_color_red');
+    // textAfter.classList.remove('transliteration__textarea_color_red');
+    textBefore.classList.remove('transliteration__textarea_border_red');
   }
 
   // Убираю мягкий и твёрдый знаки
@@ -252,7 +263,8 @@ buttonCheckNone.addEventListener('click', () => {
 buttonReset.addEventListener('click', resetText);
 
 // Транслитерация текста
-buttonTransliteration.addEventListener('click', () => {
+buttonTransliteration.addEventListener('click', (e) => {
+  e.preventDefault();
   const transliteratedText = findAndReplace(textBefore.value, [
     ...checkboxInputs,
   ]);

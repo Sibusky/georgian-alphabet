@@ -70,7 +70,12 @@
               выдумывать или неоткуда копировать, то воспользуйтесь кнопками
               "Случайный текст" или "Факт о Грузии" и нажмите кнопку
               "Транслитерация". За генерацию случайных текстов спасибо сервису
-              <a class="lead__text-link link" href="https://fish-text.ru" target="_blank">fish-text</a>.
+              <a
+                class="lead__text-link link"
+                href="https://fish-text.ru"
+                target="_blank"
+                >fish-text</a
+              >.
             </p>
             <p class="lead__text">
               Рекомендую начать с замены одной буквы, потом добавить ещё одну,
@@ -599,6 +604,29 @@
             </fieldset>
           </section>
 
+          <section class="options">
+            <fieldset class="options__fieldset">
+              <div class="options__fieldset-checkbox">
+                <input
+                  class="options__fieldset-checkbox-input"
+                  type="checkbox"
+                  id="ь"
+                  value="ь"
+                  name="ь"
+                />
+                <label class="alphabet__character-checkbox-label" for="ჰ"
+                  >Убрать 'ъ' и 'ь'</label
+                >
+                <button
+                  class="options__fieldset-checkbox-button button"
+                  data-title="Если поставить галочку, то в итоговом тексте не будет букв 'ъ' и 'ь'"
+                >
+                  ?
+                </button>
+              </div>
+            </fieldset>
+          </section>
+
           <section class="transliteration">
             <form class="transliteration__form">
               <div class="transliteration__text">
@@ -618,8 +646,9 @@
                 <div class="transliteration__buttons-trans-and-reset">
                   <button
                     class="transliteration__button-transliteration transliteration__button button"
-                    type="button"
+                    type="submit"
                     aria-label="Транслитерация"
+                    data-title="Для начала выберите буквы для тренировки и напишите что-нибудь в поле для русского текста"
                   >
                     Транслитерация
                   </button>
@@ -646,7 +675,6 @@
                   >
                     Факт о Грузии
                   </button>
-                  
                 </div>
                 <div class="transliteration__buttons-text-size">
                   <button
@@ -683,7 +711,7 @@
 
           <section class="feedback">
             <p class="feedback__text text">
-              Заметили ошибку или есть идея как улучшить тренажёр, напишите
+              Заметили ошибку или есть идея как улучшить тренажёр? Напишите
               сообщение мне в соцсети, указанные в правом нижнем углу страницы.
             </p>
           </section>
@@ -743,6 +771,7 @@
       </div>
     </div>
     <script src="./georgianFacts.js"></script>
+    <script src="./onegin.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
