@@ -16,10 +16,14 @@ const toolTipText = document.querySelector('.tooltip__text');
 const toolTipCloseButton = document.querySelector('.tooltip__close-btn');
 
 const randomTextButton = document.querySelector(
-  '.transliteration__button-random-text'
+  '.options__fieldset-button-random-text'
 );
 const georgianFactButton = document.querySelector(
-  '.transliteration__button-georgian-fact'
+  '.options__fieldset-button-georgian-fact'
+);
+const oneginButton = document.querySelector('.options__fieldset-button-onegin');
+const optionsCheckboxInputs = document.querySelectorAll(
+  '.options__fieldset-checkbox-input'
 );
 
 const buttonTextSizeUp = document.querySelector(
@@ -33,7 +37,6 @@ const buttonTextSizeDown = document.querySelector(
 function resetText() {
   textBefore.value = '';
   textAfter.value = '';
-  // textAfter.classList.remove('transliteration__textarea_color_red');
   alphabet.classList.remove('alphabet__characters_color_red');
   textBefore.classList.remove('transliteration__textarea_border_red');
 }
@@ -58,28 +61,28 @@ function getCheckedInputs(nodeList) {
 }
 
 function findAndReplace(text, nodeList) {
+  // Чекнутые буквы
   let characters = getCheckedInputs(nodeList);
   let georgianCharacters = Object.keys(characters);
   let russianCharacters = Object.values(characters);
 
-  // Если не выбраны буквы и не написан текст 
+  // Чекнутые опции
+  let options = getCheckedInputs(optionsCheckboxInputs);
+  let optionsKeys = Object.keys(options);
+
+  // Если не выбраны буквы и не написан текст
   if (georgianCharacters.length == 0 || !textBefore.value) {
     showTooltip(buttonTransliteration);
-    // text = 'Выберите какую-нибудь букву для транслитерации...';
     text = '';
-    // textAfter.classList.add('transliteration__textarea_color_red');
     alphabet.classList.add('alphabet__characters_color_red');
-    // textAfter.classList.add('transliteration__textarea_color_red');
     textBefore.classList.add('transliteration__textarea_border_red');
   } else {
-    // textAfter.classList.remove('transliteration__textarea_color_red');
     alphabet.classList.remove('alphabet__characters_color_red');
-    // textAfter.classList.remove('transliteration__textarea_color_red');
     textBefore.classList.remove('transliteration__textarea_border_red');
   }
 
   // Убираю мягкий и твёрдый знаки
-  if (georgianCharacters.length > 30) {
+  if (optionsKeys.includes('ь')) {
     let regExp = /[^ьъ]/gi;
     text = text.match(regExp) ? text.match(regExp).join('') : text;
   }
@@ -300,6 +303,11 @@ randomTextButton.addEventListener('click', () => {
 georgianFactButton.addEventListener('click', () => {
   textBefore.value =
     georgianFacts[Math.floor(Math.random() * georgianFacts.length)];
+});
+
+// Слушатель события на кнопку вызова факта о Грузии
+oneginButton.addEventListener('click', () => {
+  textBefore.value = onegin[Math.floor(Math.random() * onegin.length)];
 });
 
 // Кнопка увеличения текста
