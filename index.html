@@ -67,9 +67,9 @@
             <p class="lead__text">
               Выберите буквы грузинского алфавита, которые хотите потренировать.
               Затем напишите или вставьте текст в поле ниже. Если лень
-              выдумывать или неоткуда копировать, то воспользуйтесь кнопками
-              "Случайный текст" или "Факт о Грузии" и нажмите кнопку
-              "Транслитерация". За генерацию случайных текстов спасибо сервису
+              выдумывать или неоткуда копировать, то воспользуйтесь
+              рандомайзером текста и нажмите кнопку "Транслитерация". За
+              генерацию случайных текстов спасибо сервису
               <a
                 class="lead__text-link link"
                 href="https://fish-text.ru"
@@ -645,7 +645,7 @@
                   value="ь"
                   name="ь"
                 />
-                <label class="options__fieldset-checkbox-label" for="ჰ"
+                <label class="options__fieldset-checkbox-label" for="ь"
                   >Удалять 'ъ' и 'ь'</label
                 >
                 <button
@@ -672,6 +672,24 @@
                   cols="30"
                   placeholder="Ваш текст"
                 ></textarea>
+                <div class="transliteration__buttons-text-size">
+                  <button
+                    class="transliteration__button-text-before-size-up transliteration__button-text-size button"
+                    type="button"
+                    aria-label="Увеличить шрифт"
+                    data-title="Увеличить шрифт textBefore"
+                  >
+                    +
+                  </button>
+                  <button
+                    class="transliteration__button-text-before-size-down transliteration__button-text-size button"
+                    type="button"
+                    aria-label="Уменьшить шрифт"
+                    data-title="Уменьшить шрифт textBefore"
+                  >
+                    -
+                  </button>
+                </div>
               </div>
               <div class="transliteration__buttons">
                 <div class="transliteration__buttons-trans-and-reset">
@@ -691,23 +709,6 @@
                     Очистить
                   </button>
                 </div>
-
-                <div class="transliteration__buttons-text-size">
-                  <button
-                    class="transliteration__button-text-size-up transliteration__button button"
-                    type="button"
-                    aria-label="Увеличить шрифт"
-                  >
-                    Шрифт +
-                  </button>
-                  <button
-                    class="transliteration__button-text-size-down transliteration__button button"
-                    type="button"
-                    aria-label="Уменьшить шрифт"
-                  >
-                    Шрифт -
-                  </button>
-                </div>
               </div>
               <div class="transliteration__text">
                 <label
@@ -721,6 +722,24 @@
                   cols="30"
                   placeholder="Транслитерация появится здесь"
                 ></textarea>
+                <div class="transliteration__buttons-text-size">
+                  <button
+                    class="transliteration__button-text-after-size-up transliteration__button-text-size button"
+                    type="button"
+                    aria-label="Увеличить шрифт"
+                    data-title="Увеличить шрифт textAfter"
+                  >
+                    +
+                  </button>
+                  <button
+                    class="transliteration__button-text-after-size-down transliteration__button-text-size button"
+                    type="button"
+                    aria-label="Уменьшить шрифт"
+                    data-title="Уменьшить шрифт textAfter"
+                  >
+                    -
+                  </button>
+                </div>
               </div>
             </form>
           </section>

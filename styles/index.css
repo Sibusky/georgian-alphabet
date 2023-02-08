@@ -41,6 +41,7 @@
 @import url(../blocks/transliteration/__buttons-text-size/transliteration__buttons-text-size.css);
 @import url(../blocks/transliteration/__textarea/_color/transliteration__textarea_color_red.css);
 @import url(../blocks/transliteration/__textarea/_border/transliteration__textarea_border_red.css);
+@import url(../blocks/transliteration/__button-text-size/transliteration__button-text-size.css);
 @import url(../blocks/feedback/feedback.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__contacts-list/footer__contacts-list.css);

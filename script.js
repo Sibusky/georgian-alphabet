@@ -25,14 +25,23 @@ const oneginButton = document.querySelector('.options__fieldset-button-onegin');
 const optionsCheckboxInputs = document.querySelectorAll(
   '.options__fieldset-checkbox-input'
 );
-const options = document.querySelector('.options__fieldset')
+const options = document.querySelector('.options__fieldset');
+const transliteration = document.querySelector('.transliteration__form')
 
-const buttonTextSizeUp = document.querySelector(
-  '.transliteration__button-text-size-up'
+const buttonTextAfterSizeUp = document.querySelector(
+  '.transliteration__button-text-after-size-up'
 );
-const buttonTextSizeDown = document.querySelector(
-  '.transliteration__button-text-size-down'
+const buttonTextAfterSizeDown = document.querySelector(
+  '.transliteration__button-text-after-size-down'
 );
+const buttonTextBeforeSizeUp = document.querySelector(
+  '.transliteration__button-text-before-size-up'
+);
+const buttonTextBeforeSizeDown = document.querySelector(
+  '.transliteration__button-text-before-size-down'
+);
+
+
 
 // Функция сброса текста
 function resetText() {
@@ -317,17 +326,28 @@ georgianFactButton.addEventListener('click', () => {
     georgianFacts[Math.floor(Math.random() * georgianFacts.length)];
 });
 
-// Слушатель события на кнопку вызова факта о Грузии
+// Слушатель события на кнопку вызова цитаты из Онегина
 oneginButton.addEventListener('click', () => {
   textBefore.value = onegin[Math.floor(Math.random() * onegin.length)];
 });
 
-// Кнопка увеличения текста
-buttonTextSizeUp.addEventListener('click', () => {
+// Кнопка увеличения текста до
+buttonTextBeforeSizeUp.addEventListener('click', () => {
+  increaseTextSize(textBefore);
+});
+
+// Кнопка уменьшения текста до
+buttonTextBeforeSizeDown.addEventListener('click', () => {
+  decreaseTextSize(textBefore);
+});
+
+// Кнопка увеличения текста после
+buttonTextAfterSizeUp.addEventListener('click', () => {
   increaseTextSize(textAfter);
 });
 
-// Кнопка уменьшения текста
-buttonTextSizeDown.addEventListener('click', () => {
+// Кнопка уменьшения текста после
+buttonTextAfterSizeDown.addEventListener('click', () => {
   decreaseTextSize(textAfter);
 });
+

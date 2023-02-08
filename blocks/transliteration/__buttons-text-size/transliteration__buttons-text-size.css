@@ -1,13 +1,7 @@
 .transliteration__buttons-text-size {
   display: flex;
   flex-direction: column;
-}
-
-@media screen and (max-width: 400px) {
-  .transliteration__buttons-text-size {
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    margin: 20px 0 0 0;
-  }
+  position: absolute;
+  top: 34px;
+  right: 18px;
 }
