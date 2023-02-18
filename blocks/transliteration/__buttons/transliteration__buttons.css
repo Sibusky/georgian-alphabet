@@ -8,10 +8,7 @@
 
 @media screen and (max-width: 800px) {
   .transliteration__buttons {
-    /* flex-direction: row; */
     margin: 30px auto 30px;
-    /* width: 95%; */
-    /* align-content: space-between; */
   }
 }
 
